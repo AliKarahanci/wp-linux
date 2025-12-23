@@ -1,12 +1,6 @@
 #include <gtk/gtk.h>
 #include <webkit2/webkit2.h>
 
-/**
- * Bu uygulama Linux (Fedora/GNOME) üzerinde en yüksek performansı sağlamak için 
- * GTK3 ve WebKitGTK kütüphanelerini kullanarak geliştirilmiştir.
- */
-
-// Harici bağlantıları sistemin varsayılan tarayıcısında açmak için kullanılan fonksiyon
 static gboolean decide_policy_cb(WebKitWebView *web_view,
                                 WebKitPolicyDecision *decision,
                                 WebKitPolicyDecisionType type,
@@ -17,8 +11,6 @@ static gboolean decide_policy_cb(WebKitWebView *web_view,
         WebKitURIRequest *request = webkit_navigation_action_get_request(navigation_action);
         const gchar *uri = webkit_uri_request_get_uri(request);
 
-        // Eğer URI whatsapp.com içermiyorsa, sistemin varsayılan tarayıcısında aç
-        // Bu sayede uygulama içinde istenmeyen sekmelerin açılması engellenir.
         if (g_strrstr(uri, "web.whatsapp.com") == NULL && 
             g_strrstr(uri, "whatsapp.net") == NULL) {
             
@@ -32,33 +24,25 @@ static gboolean decide_policy_cb(WebKitWebView *web_view,
 }
 
 static void activate(GtkApplication *app, gpointer user_data) {
-    // Ana pencereyi oluştur
     GtkWidget *window = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(window), "WhatsApp Web");
     gtk_window_set_default_size(GTK_WINDOW(window), 1100, 800);
     
-    // Webview ayarlarını yapılandır
     WebKitSettings *settings = webkit_settings_new();
     
-    // Fedora üzerinde en iyi uyum için güncel bir User-Agent
     webkit_settings_set_user_agent(settings, "Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
     webkit_settings_set_enable_developer_extras(settings, FALSE);
     webkit_settings_set_enable_resizable_text_areas(settings, TRUE);
     webkit_settings_set_enable_javascript(settings, TRUE);
 
-    // WebView (tarayıcı bileşeni) oluştur
     GtkWidget *web_view = webkit_web_view_new_with_settings(settings);
     
-    // Pencereye webview'ı ekle
     gtk_container_add(GTK_CONTAINER(window), web_view);
 
-    // Politika kararı sinyalini bağla (bağlantıları kontrol etmek için)
     g_signal_connect(web_view, "decide-policy", G_CALLBACK(decide_policy_cb), NULL);
 
-    // WhatsApp Web'i yükle
     webkit_web_view_load_uri(WEBKIT_WEB_VIEW(web_view), "https://web.whatsapp.com/");
 
-    // Her şeyi görünür yap
     gtk_widget_show_all(window);
 }
 
