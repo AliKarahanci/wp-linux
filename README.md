@@ -7,8 +7,9 @@ Whatsapp Webapp for Linux
 ```
 
 
-Alternative to Install:
-## How to compile on my host device?
+## Alternative to Install: 
+How to compile on my host device?
+
 ### Install requirements
 ```bash
 gtk3-devel webkit2gtk4.1-devel pkgconf-pkg-config
