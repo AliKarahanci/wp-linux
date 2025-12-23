@@ -3,7 +3,7 @@ Whatsapp Webapp for Linux
 
 ## Install
 ```bash
-
+curl -fsSL https://raw.githubusercontent.com/AliKarahanci/wp-linux/main/run.sh | bash
 ```
 
 
