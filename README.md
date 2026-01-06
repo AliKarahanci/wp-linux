@@ -31,5 +31,7 @@ How to compile on my host device?
 
 ### Compile 
 ```bash
-cargo build
+git clone https://github.com/AliKarahanci/wp-linux
+cd wp-linux
+cargo build --release
 ```
