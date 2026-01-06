@@ -5,14 +5,6 @@ Whatsapp Webapp for Linux
 
 
 ## Install
-### Fedora/Nobara/Bazzite
-```bash
-sudo dnf install
-```
-### Ubuntu/Debian/Mint/ZorinOS
-```bash
-###
-```
 ### Arch Linux/Manjaro/CachyOS/Garuda
 ```bash
 wget https://github.com/AliKarahanci/wp-linux/releases/download/v0.1.0/PKGBUILD
