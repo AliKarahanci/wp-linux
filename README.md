@@ -5,10 +5,6 @@ Whatsapp Webapp for Linux
 
 
 ## Install
-### General GNU/Linux
-```bash
-curl ###
-```
 ### Fedora/Nobara/Bazzite
 ```bash
 sudo dnf install
@@ -29,6 +25,9 @@ or
 ```bash
 paru -S
 ```
+
+### My distro not listed in here, what should i do?
+- If your distro not listed in here, you must compile on your host device. 
 
 ## Alternative to Install: 
 How to compile on my host device?
