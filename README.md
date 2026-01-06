@@ -1,6 +1,9 @@
 # wp-linux
 Whatsapp Webapp for Linux
 
+<img width="1006" height="733" alt="image" src="https://github.com/user-attachments/assets/f1b28d84-7bd9-477e-8589-25965af02b04" />
+
+
 ## Install
 ### General GNU/Linux
 ```bash
