@@ -4,6 +4,17 @@ Whatsapp Webapp for Linux
 <img width="1006" height="733" alt="image" src="https://github.com/user-attachments/assets/f1b28d84-7bd9-477e-8589-25965af02b04" />
 
 
+## OS Support
+
+|  OS  |  Status  |
+|  ----  |  ----  |
+|  Arch Linux/Manjaro/Garuda/CachyOS  |  Work Perfectly  |
+|  Fedora/RHEL/CentOS  |  Work in progress  |
+|  Debian/Ubuntu/Mint/MX Linux  |  Work in progress  |
+|  Gentoo  |  Work in progress  |
+
+
+
 ## Install
 ### Arch Linux/Manjaro/CachyOS/Garuda
 ```bash
