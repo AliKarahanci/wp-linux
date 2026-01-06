@@ -19,7 +19,11 @@ sudo dnf install
 ```
 ### Arch Linux/Manjaro/CachyOS/Garuda
 ```bash
-makepkg -si ###
+wget https://github.com/AliKarahanci/wp-linux/releases/download/v0.1.0/PKGBUILD
+makepkg -si
+
+# or run:
+# curl -L https://github.com/AliKarahanci/wp-linux/releases/download/v0.1.0/PKGBUILD -o PKGBUILD && makepkg -si
 ```
 or
 ```bash
